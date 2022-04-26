@@ -1,6 +1,7 @@
 // Dark Mode
 
 let darkMode = localStorage.getItem("darkMode");
+let header = document.querySelector(".header");
 const themeSwitcher = document.querySelector(".switch-container");
 
 const enableDarkMode = () => {
@@ -16,10 +17,12 @@ const disabledDarkMode = () => {
 if (darkMode === "enabled") {
   enableDarkMode();
   themeSwitcher.classList.toggle("active");
+  header.classList.toggle("active");
 }
 
 themeSwitcher.addEventListener("click", () => {
   themeSwitcher.classList.toggle("active");
+  header.classList.toggle("active");
 
   darkMode = localStorage.getItem("darkMode");
   if (darkMode !== "enabled") {
