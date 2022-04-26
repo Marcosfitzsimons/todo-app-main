@@ -12,28 +12,27 @@
   /* Neutral */
 
   /* Light Theme */
-
-  --white: rgb(255, 255, 255);
-  --veryLightGray: hsl(0, 0%, 97%);
-  --veryLightGrayishBlue: hsl(236, 33%, 92%);
-  --lightGrayishBlue: hsl(233, 11%, 84%);
-  --darkGrayishBlue: hsl(237, 13%, 67%);
-  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+  --titleColor: hsl(0, 0%, 97%);
+  --backgroundItem: rgb(255, 255, 255);
+  --backgroundColor: hsl(0, 0%, 97%);
+  --bodyColor: hsl(237, 14%, 26%);
+  --borderColor: hsl(233, 11%, 84%);
+  --lineColor: hsl(233, 11%, 71%);
+  --hoverColor: hsl(235, 19%, 35%);
   
-  /* Dark Theme */
-
-  --veryDarkBlue: hsl(235, 21%, 11%);
-  --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
-  --lightGrayishBlue: hsl(234, 39%, 85%);
-  --lightGrayishBlue: hsl(236, 33%, 92%); /* hover */
-  --darkGrayishBlue: hsl(234, 11%, 52%);
-  --veryDarkGrayishBlue: hsl(233, 14%, 35%);
-  --veryDarkGrayishBlue: hsl(237, 14%, 26%);
-
-
   /* Font */
 
   --ff: 'Josefin Sans', sans-serif;
+}
+
+.dark-mode {
+    /* Dark Theme */
+    --backgroundColor: hsl(235, 21%, 11%);
+    --backgroundItem: hsl(235, 24%, 19%);
+    --borderColor: hsl(234, 39%, 85%);
+    --hoverColor: hsl(236, 33%, 92%); /* hover */
+    --bodyColor: hsl(236, 33%, 92%);
+    --lineColor:hsl(237, 13%, 67%);
 }
 
 html {
@@ -51,10 +50,11 @@ html {
 
 body {
   font-family: var(--ff);
-  background-color: var(--veryLightGray);
+  background-color: var(--backgroundColor);
   font-size: 1.8rem;
   margin: 0;
   padding: 0;
+  color: var(--bodyColor);
 }
 
 h1 {
@@ -129,8 +129,21 @@ img {
   background-repeat: no-repeat;
 }
 
+.header.active {
+  background-image: url(../images/bg-mobile-dark.jpg);
+}
+
+@media (min-width: 800px) {
+  .header {
+    background-image: url(../images/bg-desktop-light.jpg);
+  }
+  .header.active {
+    background-image: url(../images/bg-desktop-dark.jpg);
+  }
+}
+
 .header-container {
-  color: var(--veryLightGray);
+  color: var(--backgroundColor);
   padding-top: 5rem;
   height: 2rem;
   display: flex;
@@ -141,6 +154,7 @@ img {
   letter-spacing: 1.1rem;
   font-size: 2.9rem;
   cursor: pointer;
+  color: var(--titleColor);
 }
 
 .switch-container {
@@ -176,11 +190,12 @@ img {
 
 .new-todo {
   height: 6.5rem;
-  background-color: var(--white);
+  background-color: var(--backgroundItem);
   display: flex;
   justify-content: space-between;
   padding: 0 2rem;
   border-radius: 1rem;
+  color: var(--bodyColor);
 }
 
 .todo-wrapper {
@@ -198,7 +213,7 @@ img {
 
 .check-circle {
   position: relative;
-  border: 1px solid var(--lightGrayishBlue);
+  border: 1px solid var(--borderColor);
   height: 45%;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -243,15 +258,18 @@ img {
   flex-grow: 1;
   border: none;
   font-family: var(--ff);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   outline: none;
-  color: var(--darkGrayishBlue);
+  color: var(--bodyColor);
+  background-color: var(--backgroundItem);
+
 }
 
 .new-todo__input::placeholder {
   font-weight: 400;
-  color: var(--darkGrayishBlue);
+  color: var(--bodyColor);
   font-family: var(--ff);
+  font-size: 1.6rem;
 }
 
 .new-todo__input:focus-visible {
@@ -269,11 +287,11 @@ img {
 
 .todo-item, .first-part, .second-part{
   height: 6.5rem;
-  background-color: var(--white);
+  background-color: var(--backgroundItem);
   display: flex;
   padding: 0 2rem;
   gap: 2rem;
-  border-bottom: 2px solid var(--veryLightGray);
+  border-bottom: 2px solid var(--backgroundColor);
 }
 
 .todo-item {
@@ -285,6 +303,7 @@ img {
   display: flex;
   height: 6.5rem;
   gap: 2rem;
+
 }
 
 .todo-item:first-child {
@@ -295,6 +314,11 @@ img {
   position: relative;
   top: .55rem;
   cursor: pointer;
+}
+
+.todo-item__text.active {
+  text-decoration: line-through;
+  color: var(--lineColor);
 }
 
 .todo-item-right {
@@ -328,7 +352,7 @@ img {
 }
 
 .clear:hover {
-  color: var(--veryDarkGrayishBlue);
+  color: var(--hoverColor);
 }
 
 .second-part {
@@ -338,7 +362,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-  color: var(--darkGrayishBlue);
+  color: var(--borderColor);
   font-size: 1.5rem;
   font-weight: 800;
   box-shadow: -1px 10px 50px 1px rgba(0,0,0,0.2);
@@ -347,11 +371,11 @@ img {
 
 .task-status {
   cursor: pointer;
-  color: var(--darkGrayishBlue);
+  color: var(--borderColor);
 }
 
 .task-status:hover {
-  color: var(--veryDarkGrayishBlue);
+  color: var(--hoverColor);
 }
 
 .task-status.active {
