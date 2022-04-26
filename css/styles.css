@@ -1,0 +1,424 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+:root {
+  /* Colors */
+  
+  /* Primary */
+
+  --brightBlue: hsl(220, 98%, 61%);
+  --checkBackground: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%);
+
+  /* Neutral */
+
+  /* Light Theme */
+
+  --white: rgb(255, 255, 255);
+  --veryLightGray: hsl(0, 0%, 97%);
+  --veryLightGrayishBlue: hsl(236, 33%, 92%);
+  --lightGrayishBlue: hsl(233, 11%, 84%);
+  --darkGrayishBlue: hsl(237, 13%, 67%);
+  --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+  
+  /* Dark Theme */
+
+  --veryDarkBlue: hsl(235, 21%, 11%);
+  --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+  --lightGrayishBlue: hsl(234, 39%, 85%);
+  --lightGrayishBlue: hsl(236, 33%, 92%); /* hover */
+  --darkGrayishBlue: hsl(234, 11%, 52%);
+  --veryDarkGrayishBlue: hsl(233, 14%, 35%);
+  --veryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+
+  /* Font */
+
+  --ff: 'Josefin Sans', sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  transition: .5s;
+}
+
+*,
+*:before, 
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--ff);
+  background-color: var(--veryLightGray);
+  font-size: 1.8rem;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* ==============
+  Global Styles
+============== */
+
+.container {
+  width: min(85%, 120rem);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.main {
+  position: relative;
+  bottom: 12rem;
+}
+
+/* ==============
+  Utilities
+============== */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-border {
+  border: 0;
+}
+
+.centrar-texto {
+  text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ==============
+    Button Styles
+============== */
+
+
+/* ==============
+    Custom Styles
+============== */
+
+/* ==============
+    Header
+============== */
+
+.header {
+  height: 25rem;
+  background-image: url(../images/bg-mobile-light.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header-container {
+  color: var(--veryLightGray);
+  padding-top: 5rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  letter-spacing: 1.1rem;
+  font-size: 2.9rem;
+  cursor: pointer;
+}
+
+.switch-container {
+  background-image: url('../images/icon-moon.svg');
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  aspect-ratio: 1 / 1;
+  height: 2.35rem;
+  cursor: pointer;
+}
+
+.switch-container.active {
+  background-image: url('../images/icon-sun.svg');
+}
+
+/* ==============
+    aspect-ratio property
+
+    for making boxes that respect the same width and height: 
+    aspect-ratio: 1 / 1; height/width: 50px;
+
+    with flex-grow: 1, scale perfectly in all screens.
+============== */
+
+/* ==============
+    Main
+============== */
+
+/* ==============
+    new-todo section
+============== */
+
+.new-todo {
+  height: 6.5rem;
+  background-color: var(--white);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-radius: 1rem;
+}
+
+.todo-wrapper {
+  display: flex;
+  gap: 2rem;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.check-container {
+  width: 2.5rem;
+  aspect-ratio: 1 / 1;
+  display: flex;
+}
+
+.check-circle {
+  position: relative;
+  border: 1px solid var(--lightGrayishBlue);
+  height: 45%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  align-self: center;
+}
+
+.check-circle.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+}
+
+.check-icon {
+  position: absolute;
+  width: 1.2rem;
+  aspect-ratio: 11 / 10;
+}
+
+.check-icon.active {
+  background-image: url(../images/icon-check.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.add-btn {
+  aspect-ratio: 1;
+  width: 2rem;
+  background-image: url(../images/send-plane-2-line-1.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.new-todo__input {
+  height: 100%;
+  align-self: center;
+  padding-top: .4rem;
+  flex-grow: 1;
+  border: none;
+  font-family: var(--ff);
+  font-size: 1.5rem;
+  outline: none;
+  color: var(--darkGrayishBlue);
+}
+
+.new-todo__input::placeholder {
+  font-weight: 400;
+  color: var(--darkGrayishBlue);
+  font-family: var(--ff);
+}
+
+.new-todo__input:focus-visible {
+  border: none;
+}
+
+/* ==============
+    todo-list section
+============== */
+
+.todo-list {
+  padding-left: 0;
+  margin: 1.8rem 0 0 0;
+}
+
+.todo-item, .first-part, .second-part{
+  height: 6.5rem;
+  background-color: var(--white);
+  display: flex;
+  padding: 0 2rem;
+  gap: 2rem;
+  border-bottom: 2px solid var(--veryLightGray);
+}
+
+.todo-item {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item-left {
+  display: flex;
+  height: 6.5rem;
+  gap: 2rem;
+}
+
+.todo-item:first-child {
+  border-radius: 1rem 1rem 0 0;
+}
+
+.todo-item__text {
+  position: relative;
+  top: .55rem;
+  cursor: pointer;
+}
+
+.todo-item-right {
+  background-image: url(../images/icon-cross.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 2.3rem;
+  width: 2.3rem;
+  cursor: pointer;
+}
+
+/* ==============
+    todo-list-bottom section
+============== */
+
+.first-part {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 0 0 1rem 1rem;
+  border-bottom: 0;
+  align-items: center;
+  font-size: 1.4rem;
+  color: hsl(236, 10%, 67%);
+  position: relative;
+  z-index: 4;
+}
+
+.clear {
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: var(--veryDarkGrayishBlue);
+}
+
+.second-part {
+  border-radius: 1rem;
+  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  color: var(--darkGrayishBlue);
+  font-size: 1.5rem;
+  font-weight: 800;
+  box-shadow: -1px 10px 50px 1px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.task-status {
+  cursor: pointer;
+  color: var(--darkGrayishBlue);
+}
+
+.task-status:hover {
+  color: var(--veryDarkGrayishBlue);
+}
+
+.task-status.active {
+  color: var(--brightBlue);
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==============
+    Footer
+============== */
+
+.footer { 
+  text-align: center;
+  color: var(--darkGrayishBlue);
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__text {
+  margin-bottom: 0;
+}
+
+.me {
+  color: #257979;
+  font-style: italic;
+}
+
+@media (min-width: 1200px) {
+  .main, .header-container {
+    width: 50%;
+  }
+  .main {
+    bottom: 14rem;
+  }
+
+  .todo-list-bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5rem;
+  }
+
+  .first-part {
+    grid-column: 1 / 4;
+  }
+
+  .second-part {
+    margin: 0;
+    grid-column: 2 / 3;
+    position: relative;
+    bottom: 5rem;
+    z-index: 33333;
+    background-color: inherit;
+    border: none;
+    box-shadow: none;
+  }
+
+  .footer {
+    padding: 0;
+    gap: 1rem;
+  }
+
+  .todo-list {
+    box-shadow: -1px 30px 50px 1px rgba(0,0,0,0.2);
+  }
+}

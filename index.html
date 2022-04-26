@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+  
+  <title>Todo app</title>
+
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-container container">
+      <h1 class="title">TODO</h1>
+      <div class="switch-container"></div>
+    </div>
+  </header>
+
+  <main class="main container">
+    
+    <section class="new-todo">
+
+      <div class="todo-wrapper">
+       <div class="check-container">
+          <div class="check-circle">
+            <div class="check-icon"></div>
+          </div>
+       </div>
+       <input type="text" placeholder="Create a new todo..." class="new-todo__input">
+      </div>
+
+      <div class="add-btn"></div>
+
+    </section>
+
+    <section class="todo-list-container">
+      <ul class="todo-list">
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle active">
+                <div class="check-icon active"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">Complete online Javascript course</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li> 
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle">
+                <div class="check-icon"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">Jog around the park 3x</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li> 
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle">
+                <div class="check-icon"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">10 minutes meditatio n</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li>
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle">
+                <div class="check-icon"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">Read for 1 hour</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li>
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle">
+                <div class="check-icon"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">Pick up groceries</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li>
+        <li class="todo-item">
+          <div class="todo-item-left">
+            <div class="check-container">
+              <div class="check-circle">
+                <div class="check-icon"></div>
+              </div>
+            </div>
+            <p class="todo-item__text">Complete Todo App on Frontend Mentor</p>
+          </div>
+          <div class="todo-item-right"></div>
+        </li> 
+      </ul>
+    </section>
+
+    <div class="todo-list-bottom">
+
+      <div class="first-part">
+        <p class="items-left">5 items left</p>
+        <p class="clear">Clear Completed</p>
+      </div>
+      <div class="second-part">
+        <p class="task-status active">All</p>
+        <p class="task-status">Active</p>
+        <p class="task-status">Completed</p>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <p class="footer__text">Drag and drop to reorder list</p>
+      <div class="attribution-container container">
+        <p class="attribution">Challenge by <a class="me" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor.</a><br> 
+        Coded by <a href="https://github.com/Marcosfitzsimons" target="_blank" class="me">Marcos Valentín Fitzsimons.</a></p>
+      </div>
+    </footer>
+
+  </main>
+
+
+</body>
+</html>
